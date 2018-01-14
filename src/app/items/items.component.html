@@ -1,7 +1,8 @@
 <h2>Items List</h2>
 <ul class="items">
-  <li *ngFor="let item of items">
+  <li *ngFor="let item of items" (click)="showDetail(item)" [class.selected]="item === selectedItem">
     <span class="badge">{{item.id}}</span> {{item.name}}
   </li>
 </ul>
-<button (click)="goToAddNew()">Add new</button>
+
+<app-item-detail [item]="selectedItem"></app-item-detail>

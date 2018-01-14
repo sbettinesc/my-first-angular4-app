@@ -5,19 +5,27 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { ItemsComponent } from './items/items.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { ItemService } from './item.service';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemsComponent
+    ItemsComponent,
+    ItemDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [ItemService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

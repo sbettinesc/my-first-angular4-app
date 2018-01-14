@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../item';
-import { ITEMS } from '../mock-items';
+import { ItemService } from '../item.service';
 
 @Component({
   selector: 'app-items',
@@ -9,17 +9,18 @@ import { ITEMS } from '../mock-items';
 })
 export class ItemsComponent implements OnInit {
 
-  items;
+  items: Item[];
+  selectedItem: Item;
   addNew: boolean;
   
-  constructor() { 
+  constructor(private itemService: ItemService) {
     console.log("Inside contructor method");
+    this.addNew = false;
   }
 
   ngOnInit() {
     console.log("Inside ngOnInit method");
-    this.addNew = false;
-    this.items = ITEMS;
+    this.getItems();
   }
 
   goToAddNew() {
@@ -27,4 +28,11 @@ export class ItemsComponent implements OnInit {
     this.addNew = true;
   }
 
+  getItems(): void {
+    this.itemService.getItems().subscribe(items => this.items = items);
+  }
+
+  showDetail(item: Item) {
+    this.selectedItem = item;
+  }
 }

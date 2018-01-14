@@ -1,9 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-    <div style="text-align:center">
-        <h1 class="page-main-title">
-          Welcome to {{ title }}!
-        </h1>
+    <div class="row">
+        <div class="col left-section">
+            Spalla sinistra
+        </div>
+        <div class="col main-section">    
+            <h1 class="page-main-title">
+            Welcome to {{ title }}!
+            </h1>
+            <nav>
+                <a routerLink="/items">Items</a>
+            </nav>
+            <router-outlet></router-outlet> 
+        </div>
     </div>
-    <app-items></app-items>  
+    <app-messages></app-messages>
 </div>
