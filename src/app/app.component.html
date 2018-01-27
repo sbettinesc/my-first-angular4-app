@@ -1,18 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
     <div class="row">
-        <div class="col left-section">
+        <h1 class="page-main-title">
+        Welcome to {{ title }}!
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 left-section">
             Spalla sinistra
         </div>
-        <div class="col main-section">    
-            <h1 class="page-main-title">
-            Welcome to {{ title }}!
-            </h1>
+        <div class="col-sm-9 main-section">        
             <nav>
+                <a routerLink="/dashboard">Dashboard</a>
                 <a routerLink="/items">Items</a>
             </nav>
             <router-outlet></router-outlet> 
         </div>
     </div>
-    <app-messages></app-messages>
+    <div class="row">
+        <app-messages></app-messages>
+    </div>
 </div>

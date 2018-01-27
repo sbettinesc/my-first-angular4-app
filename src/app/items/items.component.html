@@ -1,8 +1,8 @@
 <h2>Items List</h2>
-<ul class="items">
-  <li *ngFor="let item of items" (click)="showDetail(item)" [class.selected]="item === selectedItem">
-    <span class="badge">{{item.id}}</span> {{item.name}}
+<ul class="list-group items">
+  <li class="list-group-item" *ngFor="let item of items" (click)="showDetail(item)" [class.selected]="item === selectedItem">
+    <a routerLink="/detail/{{item.id}}">
+      <span class="badge badge-primary">{{item.id}}</span> {{item.name}}
+    </a>
   </li>
 </ul>
-
-<app-item-detail [item]="selectedItem"></app-item-detail>

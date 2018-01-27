@@ -10,14 +10,15 @@ import { ItemService } from './item.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
 import { AppRoutingModule } from './/app-routing.module';
-
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemsComponent,
     ItemDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -28,4 +29,11 @@ import { AppRoutingModule } from './/app-routing.module';
   providers: [ItemService, MessageService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  private router: AppRoutingModule;
+
+  constructor() {
+    console.log('App constructor');
+  }
+}
